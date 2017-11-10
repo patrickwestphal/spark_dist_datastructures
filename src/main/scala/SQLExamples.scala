@@ -31,10 +31,11 @@ object SQLExamples {
     val df = sqlContext.read.format("com.databricks.spark.csv")
       .option("header", "true").option("inferSchema", "true")
       .load("src/main/resources/sales.csv")
+
     // Register file as table (for querying)
     df.createOrReplaceTempView("sales")
 
-    sqlContext.sql("SELECT * FROM sales").collect().foreach(println)
+//    sqlContext.sql("SELECT * FROM sales").collect().foreach(println)
 //    val rdd: RDD[Row] = df.rdd
 
 //    val resultDf = sqlContext.sql("SELECT a.customerId FROM (" +

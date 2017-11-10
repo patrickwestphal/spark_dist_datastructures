@@ -1,4 +1,5 @@
 object ImplicitExample {
+
   class FlyMethods(flyingCar: Car) {
     def fly = println("Now the " + flyingCar.manufacturer + " with id " + flyingCar.id + " is flying")
 

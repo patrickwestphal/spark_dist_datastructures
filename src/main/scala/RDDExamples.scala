@@ -1,14 +1,13 @@
-import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 object RDDExamples {
   def main(args: Array[String]): Unit = {
 
     /*
-     * local --> run in local mode, number of partitions determined by Spark
+     * local[*] --> run in local mode, number of partitions determined by Spark
      * local[23] --> explicitly say you want 23 partitions
      */
-    val sc = new SparkContext("local", "app name", new SparkConf())
+    val sc = new SparkContext("local[*]", "app name", new SparkConf())
 
     // read in text file line by line from HDFS or local filesystem
     // sc.textFile()
